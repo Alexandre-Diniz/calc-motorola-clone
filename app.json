@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cacl-motorola-clone",
-    "slug": "cacl-motorola-clone",
+    "name": "calc-motorola-clone",
+    "slug": "calc-motorola-clone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
