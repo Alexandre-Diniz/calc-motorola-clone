@@ -9,7 +9,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 export default function ({ type, value, character, size, color, complex }) {
   return (
-    <View style={styles.container} >
+    <View style={[styles.container,{backgroundColor:complex?'#2F60AF':'#484848'}]} >
       <TouchableOpacity
         style={complex ? styles.complex : styles.box}
       >
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     alignItems:'center',
     width:'100%',
     height:'100%',
-    color:'#FFF'
   },
   complexText:{
     fontSize: 18,

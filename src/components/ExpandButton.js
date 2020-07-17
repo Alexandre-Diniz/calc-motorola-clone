@@ -12,7 +12,7 @@ const widthScreen = Dimensions.get('window').width
 export default function () {
   const [shift, setShift] = useState(widthScreen * 0.9)
   const [lastValue, setLastValue] = useState(widthScreen)
-  const [limit, setLimit] = useState(0)
+  const [start, setStart] = useState(widthScreen)
   return (
     <Animated.View
       style={{
@@ -26,12 +26,23 @@ export default function () {
         height: '100%',
       }} >
       <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#174FA6', width: 0.1 * widthScreen, height: '100%' }}
+        onTouchEnd={event=>{
+          if(event.nativeEvent.pageX>0.2*widthScreen && event.nativeEvent.pageX<0.9*widthScreen){
+            if(event.nativeEvent.pageX>0.55*widthScreen){
+              setShift(0.9*widthScreen)
+            } else {
+              setShift(0.2*widthScreen)
+            }
+          }
+          console.log(event.nativeEvent.pageX,shift)
+        }}
         onMoveShouldSetResponder={event => {
-          //console.log('event: ', event.nativeEvent.locationX)
+          setStart(event.touchHistory.touchBank[0].startPageX)
+          //console.log('event: ', event)
           //console.log(event.touchHistory.touchBank[0].currentPageX)
 
           if (event.nativeEvent.locationX) {
-            console.log(event.touchHistory.touchBank[0].startPageX,widthScreen * 0.9)
+            //console.log(event.touchHistory.touchBank[0].startPageX,widthScreen * 0.9)
             if (event.touchHistory.touchBank[0].startPageX > widthScreen * 0.9) {
               if (event.touchHistory.touchBank[0].currentPageX > 0.2 * widthScreen && event.touchHistory.touchBank[0].currentPageX < 0.9 * widthScreen) {
                 setShift(parseInt(event.touchHistory.touchBank[0].currentPageX))

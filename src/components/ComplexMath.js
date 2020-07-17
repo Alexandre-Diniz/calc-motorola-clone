@@ -44,11 +44,12 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor:'#2F60AF'
   },
   row: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor:'#174FA6'
+    backgroundColor:'red'
   }
 })
