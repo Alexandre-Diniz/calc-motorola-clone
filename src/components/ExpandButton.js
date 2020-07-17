@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {
   Animated,
   Dimensions,
@@ -28,11 +28,16 @@ export default function () {
       <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#174FA6', width: 0.1 * widthScreen, height: '100%' }}
         onTouchEnd={event=>{
           if(event.nativeEvent.pageX>0.2*widthScreen && event.nativeEvent.pageX<0.9*widthScreen){
-            if(event.nativeEvent.pageX>0.55*widthScreen){
+            if(event.nativeEvent.pageX>0.6*widthScreen){
               setShift(0.9*widthScreen)
             } else {
               setShift(0.2*widthScreen)
             }
+          }
+          if(event.nativeEvent.pageX>0.9*widthScreen && start>0.9*widthScreen){
+            setShift(0.2*widthScreen)
+          } else if(event.nativeEvent.pageX>0.2*widthScreen && event.nativeEvent.pageX<0.3*widthScreen && start>0.2*widthScreen && start<0.3*widthScreen){
+            setShift(0.9*widthScreen)
           }
           console.log(event.nativeEvent.pageX,shift)
         }}

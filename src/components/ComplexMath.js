@@ -45,11 +45,11 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#2F60AF'
+    backgroundColor:'#174FA6'
   },
   row: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor:'red'
+    backgroundColor:'#2F60AF'
   }
 })

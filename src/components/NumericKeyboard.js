@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
   box: {
     flex: 1,
     flexDirection: 'column',
-    flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor:'#202125'
   },
   row: {
     flex: 1,
