@@ -9,7 +9,7 @@ import Symble from './Symble'
 export default function () {
   return (
     <View style={styles.box} >
-      <Symble type='special' value={'<='} />
+      <Symble type='special' character='backspace-outline' color='#86A9D4' size={20} />
       <Symble type='special' value={'/'} />
       <Symble type='special' value={'x'} />
       <Symble type='special' value={'-'} />
