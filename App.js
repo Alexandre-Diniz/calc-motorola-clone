@@ -18,11 +18,11 @@ export default function App() {
 
       </View>
       <View style={{ flexDirection: 'row', flex: 4 }} >
-        <View style={{ height: '100%', width: '60%' }} >
+        <View style={{ height: '100%', width: '65%' }} >
           <NumericKeyboard />
         </View>
         <View style={{ height: '100%', width: 1, backgroundColor: '#36373B' }} />
-        <View style={{ height: '100%', width: '30%' }} >
+        <View style={{ height: '100%', width: '25%' }} >
           <SimpleMath />
         </View>
         {/* <View style={{ height: '100%', width: '10%' }}
