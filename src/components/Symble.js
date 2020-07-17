@@ -7,18 +7,18 @@ import {
 } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-export default function ({ type, value, character, size, color }) {
+export default function ({ type, value, character, size, color, complex }) {
   return (
     <View style={styles.container} >
       <TouchableOpacity
-        style={styles.box}
+        style={complex ? styles.complex : styles.box}
       >
         {
           character
             ?
             <MaterialCommunityIcons name={character} size={size} color={color} />
             :
-            <Text style={type === 'number' ? styles.number : styles.special} > {value} </Text>
+            <Text style={type === 'number' ? styles.number : complex?styles.complexText:styles.special} > {value} </Text>
         }
       </TouchableOpacity>
     </View>
@@ -47,5 +47,18 @@ const styles = StyleSheet.create({
   special: {
     color: '#86A9D4',
     fontSize: 20
+  },
+  complex:{
+    backgroundColor: '#174FA6',
+    fontSize: 20,
+    justifyContent:'center',
+    alignItems:'center',
+    width:'100%',
+    height:'100%',
+    color:'#FFF'
+  },
+  complexText:{
+    fontSize: 20,
+    color:'#FFF'
   }
 })
