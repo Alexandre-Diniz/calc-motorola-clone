@@ -11,12 +11,14 @@ const widthScreen = Dimensions.get('window').width
 
 export default function () {
   const [shift, setShift] = useState(widthScreen * 0.9)
+  const [lastValue, setLastValue] = useState(widthScreen)
   return (
     <Animated.View
       onMoveShouldSetResponder={event => {
-        if (event.touchHistory.touchBank[0].startPageX > widthScreen * 0.9) {
+        if (event.touchHistory.touchBank[0].startPageX > widthScreen * 0.9 && lastValue>0.2 * widthScreen) {
           if (event.touchHistory.touchBank[0].currentPageX > 0.2 * widthScreen && event.touchHistory.touchBank[0].currentPageX < 0.9 * widthScreen) {
             setShift(parseInt(event.touchHistory.touchBank[0].currentPageX))
+            setLastValue(parseInt(event.touchHistory.touchBank[0].currentPageX))
             console.log(parseInt(event.touchHistory.touchBank[0].currentPageX * 100 / widthScreen))
           } else if (event.touchHistory.touchBank[0].currentPageX >= 0.9 * widthScreen) {
             setShift(parseInt(widthScreen * 0.9))

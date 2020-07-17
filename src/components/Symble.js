@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     color:'#FFF'
   },
   complexText:{
-    fontSize: 20,
+    fontSize: 18,
     color:'#FFF'
   }
 })
